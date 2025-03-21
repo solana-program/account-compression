@@ -1435,7 +1435,7 @@ checksum = "468aa43b7edb1f9b7b7b686d5c3aeb6630dc1708e86e31343499dd5c4d775183"
 
 [[package]]
 name = "spl-account-compression"
-version = "0.3.3"
+version = "2.0.0"
 dependencies = [
  "anchor-lang",
  "bytemuck",
@@ -1447,7 +1447,7 @@ dependencies = [
 
 [[package]]
 name = "spl-concurrent-merkle-tree"
-version = "0.3.0"
+version = "2.0.0"
 dependencies = [
  "bytemuck",
  "rand 0.8.5",
@@ -1468,7 +1468,7 @@ dependencies = [
 
 [[package]]
 name = "spl-noop"
-version = "0.2.0"
+version = "2.0.0"
 dependencies = [
  "solana-program",
 ]
