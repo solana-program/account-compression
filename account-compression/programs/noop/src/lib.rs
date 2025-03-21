@@ -1,3 +1,4 @@
+// Note that this is not functional, it is just a placeholder to create a 2.0.0 compatible SDK
 use solana_program::{
     account_info::AccountInfo, declare_id, entrypoint::ProgramResult, instruction::Instruction,
     pubkey::Pubkey,
