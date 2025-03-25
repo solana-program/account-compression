@@ -19,7 +19,7 @@ thiserror = "1.0.63"
 [dev-dependencies]
 rand_distr = "0.4.3"
 rand = "0.8"
-spl-merkle-tree-reference = { version = "0.1.0", path = "../merkle-tree-reference" }
+spl-merkle-tree-reference = { version = "2.0.0", path = "../merkle-tree-reference" }
 tokio = { version = "1.39", features = ["full"] }
 
 [lib]
