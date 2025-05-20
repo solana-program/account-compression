@@ -76,8 +76,8 @@ security_txt! {
 /// Context for initializing a new SPL ConcurrentMerkleTree
 #[derive(Accounts)]
 pub struct Initialize<'info> {
-    // #[account(zero)]
     /// CHECK: This account will be zeroed out, and the size will be validated
+    #[account(mut)]
     pub merkle_tree: UncheckedAccount<'info>,
 
     /// Authority that controls write-access to the tree
