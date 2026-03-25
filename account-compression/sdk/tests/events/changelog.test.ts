@@ -1,8 +1,7 @@
 import { strict as assert } from "node:assert";
 
-import { AnchorProvider } from "@coral-xyz/anchor";
-import NodeWallet from "@coral-xyz/anchor/dist/cjs/nodewallet";
-import { bs58 } from "@coral-xyz/anchor/dist/cjs/utils/bytes";
+import { AnchorProvider, Wallet } from "@anchor-lang/core";
+import bs58 from "bs58";
 import { Connection, Keypair, PublicKey } from "@solana/web3.js";
 import { BN } from "bn.js";
 import * as crypto from "crypto";
@@ -33,7 +32,7 @@ describe("Serde tests", () => {
     connection = new Connection("http://127.0.0.1:8899", {
       commitment: "confirmed",
     });
-    const wallet = new NodeWallet(payerKeypair);
+    const wallet = new Wallet(payerKeypair);
     provider = new AnchorProvider(connection, wallet, {
       commitment: connection.commitment,
       skipPreflight: true,

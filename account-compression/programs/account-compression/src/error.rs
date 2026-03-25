@@ -1,7 +1,5 @@
-use anchor_lang::{
-    prelude::*,
-    solana_program::{msg, program_error::ProgramError},
-};
+use anchor_lang::prelude::*;
+use solana_program::program_error::ProgramError;
 use bytemuck::PodCastError;
 use spl_concurrent_merkle_tree::error::ConcurrentMerkleTreeError;
 use std::any::type_name;

@@ -22,11 +22,7 @@
 //! All modifications to SPL ConcurrentMerkleTrees are settled on the Solana ledger via instructions against the SPL Compression contract.
 //! A production-ready indexer (Plerkle) can be found in the [Metaplex program library](https://github.com/metaplex-foundation/digital-asset-validator-plugin)
 
-use anchor_lang::{
-    prelude::*,
-    solana_program::sysvar::{clock::Clock, rent::Rent},
-};
-use borsh::{BorshDeserialize, BorshSerialize};
+use anchor_lang::prelude::*;
 
 pub mod canopy;
 pub mod concurrent_tree_wrapper;
@@ -77,7 +73,7 @@ security_txt! {
 /// Context for initializing a new SPL ConcurrentMerkleTree
 #[derive(Accounts)]
 pub struct Initialize<'info> {
-    #[account(zero)]
+    #[account(mut)]
     /// CHECK: This account will be zeroed out, and the size will be validated
     pub merkle_tree: UncheckedAccount<'info>,
 
@@ -132,14 +128,14 @@ pub struct TransferAuthority<'info> {
 pub struct CloseTree<'info> {
     #[account(mut)]
     /// CHECK: This account is validated in the instruction
-    pub merkle_tree: AccountInfo<'info>,
+    pub merkle_tree: UncheckedAccount<'info>,
 
     /// Authority that controls write-access to the tree
     pub authority: Signer<'info>,
 
     /// CHECK: Recipient of funds after
     #[account(mut)]
-    pub recipient: AccountInfo<'info>,
+    pub recipient: UncheckedAccount<'info>,
 }
 
 #[program]

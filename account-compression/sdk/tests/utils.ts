@@ -1,4 +1,4 @@
-import { AnchorProvider } from '@coral-xyz/anchor';
+import { AnchorProvider } from '@anchor-lang/core';
 import { ComputeBudgetProgram, Keypair, sendAndConfirmTransaction, SendTransactionError, Signer, Transaction, TransactionInstruction, sendAndConfirmRawTransaction, Connection } from '@solana/web3.js';
 import * as crypto from 'crypto';
 
