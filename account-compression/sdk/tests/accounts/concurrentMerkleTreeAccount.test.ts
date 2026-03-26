@@ -1,7 +1,6 @@
 import { strict as assert } from 'node:assert';
 
-import { AnchorProvider } from '@coral-xyz/anchor';
-import NodeWallet from '@coral-xyz/anchor/dist/cjs/nodewallet';
+import { AnchorProvider, Wallet } from '@anchor-lang/core';
 import { Connection, Keypair, PublicKey } from '@solana/web3.js';
 
 import { ALL_DEPTH_SIZE_PAIRS, ConcurrentMerkleTreeAccount, getConcurrentMerkleTreeAccountSize } from '../../src';
@@ -49,7 +48,7 @@ describe('ConcurrentMerkleTreeAccount tests', () => {
         connection = new Connection('http://127.0.0.1:8899', {
             commitment: 'confirmed',
         });
-        const wallet = new NodeWallet(payerKeypair);
+        const wallet = new Wallet(payerKeypair);
         provider = new AnchorProvider(connection, wallet, {
             commitment: connection.commitment,
             skipPreflight: true,
